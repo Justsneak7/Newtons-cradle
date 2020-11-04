@@ -17,6 +17,14 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
+	let canvasmouse = Mouse.create(canva.elt);
+	canvasmouse.pixelRatio = pixelDensity();
+	let options = {
+		'mouse': canvasmouse
+	};
+	mConstraint = MouseConstraint.create(engine,options);
+	World.add(world,mConstraint);
+
 	var bobDiameter = 40;
 	var posX = width/2;
 	var posY = height/4 + 500;
@@ -74,4 +82,8 @@ function keyPressed() {
 		roofBodyX = roofBodyPosition.x + roofBodyOffset.x 
 		roofBodyY = roofBodyPosition.y + roofBodyOffset.y 
 		line(bobBodyPosition.x, bobBodyPosition.y, roofBodyX, roofBodyY); 
+	}
+
+	function mouseDragged (){
+		Matter.Body.setPosition(pendulum1.body,{x: mouseX,y: mouseY});
 	}
