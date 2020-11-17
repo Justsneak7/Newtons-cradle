@@ -5,6 +5,7 @@ const Body = Matter.Body;
 const Constraint = Matter.Constraint;
 
 var bob1;
+var Mouse;
 
 function preload()
 {
@@ -17,7 +18,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	let canvasmouse = Mouse.create(canva.elt);
+	let canvasmouse = Mouse.create(canvas.elt);
 	canvasmouse.pixelRatio = pixelDensity();
 	let options = {
 		'mouse': canvasmouse
