@@ -86,5 +86,5 @@ function keyPressed() {
 	}
 
 	function mouseDragged (){
-		Matter.Body.setPosition(pendulum1.body,{x: mouseX,y: mouseY});
+		Matter.Body.setPosition(bob1.body,{x: mouseX,y: mouseY});
 	}
