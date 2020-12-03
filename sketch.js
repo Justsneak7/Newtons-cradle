@@ -7,7 +7,7 @@ const Mouse = Matter.Mouse;
 const MouseConstraint = Matter.MouseConstraint;
 
 var bob1;
-var Mouse;
+
 
 
 
